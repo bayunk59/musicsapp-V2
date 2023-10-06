@@ -1,4 +1,6 @@
 /* eslint-disable linebreak-style */
+/* eslint-disable quotes */
+/* eslint-disable linebreak-style */
 /* eslint-disable no-underscore-dangle */
 class PlaylistsHandler {
   constructor(service, validator) {
@@ -18,8 +20,8 @@ class PlaylistsHandler {
     const playlistId = await this._service.addPlaylist({ name, owner: credentialId });
 
     const response = h.response({
-      status: 'success',
-      message: 'Playlist berhasil ditambahkan',
+      status: "success",
+      message: "Playlist berhasil ditambahkan",
       data: {
         playlistId,
       },
@@ -32,7 +34,7 @@ class PlaylistsHandler {
     const { id: credentialId } = request.auth.credentials;
     const playlists = await this._service.getPlaylists(credentialId);
     return {
-      status: 'success',
+      status: "success",
       data: {
         playlists,
       },
@@ -46,8 +48,8 @@ class PlaylistsHandler {
     await this._service.verifyNoteOwner(id, credentialId);
     await this._service.deletePlaylistById(id);
     return {
-      status: 'success',
-      message: 'Playlist berhasil dihapus',
+      status: "success",
+      message: "Playlist berhasil dihapus",
     };
   }
 }
